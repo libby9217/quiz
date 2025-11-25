@@ -26,9 +26,14 @@ const App =()=>{
     //이전 값에 +20
     setScore((prev)=>{return prev+20});
   }
-  return (
-    <div id='app'>
-      <h1>냥집사 상식 Quiz</h1>
+  return ( 
+    <div id='app' 
+      className={category && !finish
+      ? "quiz-active"
+      : category && finish
+      ? "result-active"
+      : ""}>
+      <h1><img src="/images/quiz_title.svg" alt="quiz title" /></h1>
       {
         !category && !finish &&
         <Categories 
