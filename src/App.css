@@ -1,5 +1,15 @@
 @charset "UTF-8";
-*{margin: 0; padding: 0;}
+@font-face {
+    font-family: 'OngleipParkDahyeon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+*{
+    font-family: 'OngleipParkDahyeon';
+    margin: 0;
+    padding: 0;
+}
 a{text-decoration: none; color: inherit;}
 ol, ul{list-style: none;}
 /*app*/
@@ -17,7 +27,7 @@ ol, ul{list-style: none;}
     height: 640px;
     border: 1px solid #222;
     box-sizing: border-box;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     padding: 2rem 2rem;
     text-align: center;
     h2{
@@ -40,7 +50,7 @@ ol, ul{list-style: none;}
     h2{
         padding: 2rem;
     }
-    p{
+    > p{
         padding-bottom: 1.5rem;
     }
     ul{
@@ -49,9 +59,23 @@ ol, ul{list-style: none;}
             cursor: pointer;
         }
     }
-    h4{
-        padding: 2rem;
+    .score{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between ;
+        align-items: center;
+        p{
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        h4{
+            span{
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+        }
     }
+    
 }
 #result{
     width: 100%;
@@ -59,9 +83,18 @@ ol, ul{list-style: none;}
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    p{
+    > p{
         font-size: larger;
         font-weight: 700;
+    }
+    .final-score{
+        p{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        h3{
+            font-size: 2rem;
+        }
     }
     button{
         cursor: pointer;

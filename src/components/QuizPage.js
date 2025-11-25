@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const QuizPage = ({ quizzes, onFinish, score, setScore }) => {
+const QuizPage = ({ quizzes, onFinish, onScore, score }) => {
   const [corrent, setCorrent] = useState(0);
   const handleClick = (idx) => {
     // 정답 체크
-    if (idx + 1 === quizzes[corrent].correct) {
-      setScore(score + 20);
+    if (idx+1 === quizzes[corrent].correct) {
+        //점수 +20
+      onScore(20);
     }
     // 다음 문제로 이동
     if (corrent < quizzes.length - 1) {
@@ -22,16 +23,16 @@ const QuizPage = ({ quizzes, onFinish, score, setScore }) => {
         {quizzes[corrent].choices.map((item, idx) => {
           return (
             <li key={idx} onClick={() => handleClick(idx)}>
-              {idx + 1}. {item}
+              {idx+1}.{item}
             </li>
           );
         })}
       </ul>
       <div className="score">
-        <h4>
-          ({`${corrent + 1}`}/{`${quizzes.length}`})
-        </h4>
-        <h4>점수 {score}점</h4>
+        <p>
+          {`${corrent + 1}`}/{`${quizzes.length}`}
+        </p>
+        <h4><span>현재점수</span> {score}점</h4>
       </div>
     </div>
   );

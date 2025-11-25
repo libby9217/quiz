@@ -11,8 +11,6 @@ const App =()=>{
   const [score, setScore] = useState(0);
   const onSelectCategory = (select)=>{
     setCategory(select);
-    setScore(0);          // 점수 초기화
-    setCategory(select);
     //quizData에서 선택한 카테고리의 문제만 새로 만듦.
     const quizzes = quizData.quizzes.filter((data)=>{
       return data.category === select;
@@ -22,6 +20,11 @@ const App =()=>{
   const handleReStart = ()=>{
     setCategory('');
     setFinish(false);
+    setScore(0);
+  }
+  const handleScore = ()=>{
+    //이전 값에 +20
+    setScore((prev)=>{return prev+20});
   }
   return (
     <div id='app'>
@@ -37,12 +40,17 @@ const App =()=>{
         <QuizPage 
           quizzes={filterQuiz}
           onFinish={setFinish}
-          score={score}
+          onScore={handleScore}
           setScore={setScore}
+          score={score}
         />
       }
       {
-        finish && <Results onReStart={handleReStart}/>
+        finish && 
+        <Results 
+        onReStart={handleReStart}
+        score={score}
+        />
       }
     </div>
   )
