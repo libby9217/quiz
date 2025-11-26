@@ -105,10 +105,10 @@ ol, ul{list-style: none;}
                 background-color: #E9A7FF;
                 border-radius: 1.5rem;
             }
-            &:hover{
+            /* &:hover{
                 transform: translateY(-4px);
                 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-            }
+            } */
         }
     }
     p{
@@ -147,11 +147,11 @@ ol, ul{list-style: none;}
                 margin: 0.5rem;
                 cursor: pointer;
                 font-size: 1.5rem;
-                &:hover{
+                /* &:hover{
                     color: #000000;
                     background-color: #C4EBF2;
                     transition: all 0.25s ease;
-                }
+                } */
             }
         }
         .score{
@@ -214,11 +214,11 @@ ol, ul{list-style: none;}
         border-radius: 0.5rem;
         border: 2px solid #C4EBF2;
         background-color: #BDAEF1;
-        &:hover{
+        /* &:hover{
             transition: all 0.25s ease;
             color: #BDAEF1;
             background-color: #FFFFFF;
-        }
+        } */
     }
     p:last-child{
             font-size: 1rem;
@@ -233,6 +233,39 @@ ol, ul{list-style: none;}
         height: 100%;
         border: none;
         border-radius: 0;
+    }
+}
+@media (hover: hover) and (pointer: fine){
+    #categories li:hover{
+        transform: translateY(-4px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }   
+    #quiz-page .quiz li:hover{
+        color: #000000;
+        background-color: #C4EBF2;
+        transition: all 0.25s ease;
+    }
+    #result button:hover{
+        transition: all 0.25s ease;
+        color: #BDAEF1;
+        background-color: #FFFFFF;
+    }
+}
+@media (hover: none){
+    #categories li:active{
+        transform: translateY(-4px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        transition: all 0.25s ease;
+    }   
+    #quiz-page .quiz li:active{
+        color: #000000;
+        background-color: #C4EBF2;
+        transition: all 0.25s ease;
+    }
+    #result button:active{
+        transition: all 0.25s ease;
+        color: #BDAEF1;
+        background-color: #FFFFFF;
     }
 }
 @keyframes blinkColor {
