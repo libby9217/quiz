@@ -7,7 +7,9 @@ const Results = ({onReStart, score})=>{
                 <h3>{score}점</h3>
             </div>
             <button onClick={onReStart}>다시시작</button>
+            <p>&copy;libby9217</p>
         </div>
+        
     )
 }
 

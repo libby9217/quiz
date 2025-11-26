@@ -13,6 +13,7 @@ const Categories = ({categories, onSelect})=>{
                     })
                 }
             </ul>
+            <p>&copy;libby9217</p>
         </div>
     )
 }
