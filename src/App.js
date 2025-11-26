@@ -33,7 +33,7 @@ const App =()=>{
       : category && finish
       ? "result-active"
       : ""}>
-      <h1><img src="/images/quiz_title.svg" alt="quiz title" /></h1>
+      <h1><img src={process.env.PUBLIC_URL + "/images/quiz_title.svg"} alt="quiz title" /></h1>
       {
         !category && !finish &&
         <Categories 
